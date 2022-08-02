@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ActionRoller from "./components/ActionRoller";
+import EffectRoller from "./components/EffectRoller";
+import Styled from "styled-components";
 
 function App() {
+  //const [effectPool, setEffectPool] = useState([]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <DiceContainer>
+        <EffectRoller />
+        <ActionRoller />
+      </DiceContainer>
     </div>
   );
 }
 
 export default App;
+
+const DiceContainer = Styled.div`
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  margin: 5px;
+  text-align: center;
+`;
